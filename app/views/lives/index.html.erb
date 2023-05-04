@@ -1,0 +1,5 @@
+<h1> Rent my Shoes 🥾 </h1>
+  <% @lives.each do |life| %>
+    <%= link_to life.name, life_path(life.id)  %>
+    <%= life.details %>
+  <% end %>
