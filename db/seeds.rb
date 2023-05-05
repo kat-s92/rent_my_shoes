@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning Database 🧹"
-Life.destroy_all
-User.destroy_all
+# Life.destroy_all
+# User.destroy_all
 
 puts "Creating Database 🗂️"
 
