@@ -7,7 +7,7 @@ class LivesController < ApplicationController
   def create
     @life = Life.new(life_params)
     @life.save
-    redirect_to life_path(@life)
+    redirect_to new_life_path(@life)
   end
 
   def destroy
