@@ -1,4 +1,15 @@
 class LivesController < ApplicationController
+
+  def new
+    @live = Life.new
+  end
+
+  def create
+    @life = Life.new(life_params)
+    @life.save
+    redirect_to new_life_path(@life)
+  end
+
   def destroy
     @life = Lives.find(params[:id])
     @life.destroy
@@ -11,5 +22,11 @@ class LivesController < ApplicationController
 
   def show
     @life = Life.find(params[:id])
+  end
+
+  private
+
+  def life_params
+    params.require(:life).permit(:name, :details, :user_id)
   end
 end
