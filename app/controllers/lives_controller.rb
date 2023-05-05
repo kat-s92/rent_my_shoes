@@ -1,4 +1,12 @@
 class LivesController < ApplicationController
+  def index
+    @lives = Life.all
+    # raise
+  end
+
+  def show
+    @life = Life.find(params[:id])
+  end
 
   def new
     @live = Life.new
@@ -16,15 +24,8 @@ class LivesController < ApplicationController
     redirect_to lives_path, status: :see_other
   end
 
-  def index
-    @lives = Life.all
-  end
-
-  def show
-    @life = Life.find(params[:id])
-  end
-
   private
+
   def life_params
     params.require(:life).permit(:name, :details, :user_id)
   end
