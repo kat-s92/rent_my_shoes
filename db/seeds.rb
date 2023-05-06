@@ -26,7 +26,7 @@ life_harry_potter = Life.new do |life|
   life.name = "Harry Potter"
   life.details = "I am an orphan living with my abusive aunt and uncle. Last year, I discovered I am a wizard and now I study at Hogwarts School of Witchcraft and Wizardry. Come do magic like me!"
 end
-life_harry_potter.user_harry_potter = user_harry_potter
+life_harry_potter.user = user_harry_potter
 life_harry_potter.save
 
 puts "We have a DB ✅ with #{Life.count} lives"

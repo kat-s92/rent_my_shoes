@@ -1,4 +1,4 @@
 <h1>Life of <%= @life.name %></h1>
  <%= @life.details %>
 
-<h3>Book this life</h3>
+<h3><%= link_to 'Book this life',  new_life_booking_path(@life.id) %></h3>
