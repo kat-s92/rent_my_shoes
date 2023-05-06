@@ -9,7 +9,7 @@ class LivesController < ApplicationController
   end
 
   def new
-    @live = Life.new
+    @life = Life.new
   end
 
   def create
