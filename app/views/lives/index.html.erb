@@ -1,4 +1,7 @@
-<h1> Rent my Shoes 🥾 </h1>
+<div>
+  <h1> Rent my Shoes 🥾 </h1>
+  <%= link_to "Upload a life", new_life_path, class: "btn btn-primary" %>
+</div>
   <% @lives.each do |life| %>
     <%= link_to life.name, life_path(life.id)  %><br>
     <%= life.details %><br><br>
