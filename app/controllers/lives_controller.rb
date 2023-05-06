@@ -1,4 +1,12 @@
 class LivesController < ApplicationController
+  def index
+    @lives = Life.all
+    # raise
+  end
+
+  def show
+    @life = Life.find(params[:id])
+  end
 
   def new
     @live = Life.new
@@ -7,21 +15,13 @@ class LivesController < ApplicationController
   def create
     @life = Life.new(life_params)
     @life.save
-    redirect_to new_life_path(@life)
+    # redirect_to new_life_path(@life)
   end
 
   def destroy
     @life = Lives.find(params[:id])
     @life.destroy
     redirect_to lives_path, status: :see_other
-  end
-
-  def index
-    @lives = Life.all
-  end
-
-  def show
-    @life = Life.find(params[:id])
   end
 
   private

@@ -1,0 +1,6 @@
+<h1>Your are Booking <%= @life.name %></h1>
+<%= simple_form_for [@lives, @bookings] do |f| %>
+  <%= f.input :date "Start Date" %>
+  <%= f.input :date "End Date" %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
