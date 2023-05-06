@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.life = @life
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to life_bookings_path(@booking)
     else
       render 'bookings/new', status: :unprocessable_entity
     end
