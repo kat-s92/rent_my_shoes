@@ -1,0 +1,5 @@
+<h1>Booking Details <%= @booking.life.name %></h1>
+<%= 'Booking Start Date:' @booking.start_date %>
+<%= 'Booking End Date:' @booking.end_date %>
+
+<h3><%= link_to '🗑️', booking_path(@booking.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></h3>
