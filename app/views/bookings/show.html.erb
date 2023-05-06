@@ -1,5 +1,5 @@
 <h1>Booking Details <%= @booking.life.name %></h1>
-<%= 'Booking Start Date:' @booking.start_date %>
-<%= 'Booking End Date:' @booking.end_date %>
-
-<h3><%= link_to '🗑️', booking_path(@booking.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></h3>
+<h5>Booking Start Date: <%=@booking.start_date %></h5>
+<h5>Booking End Date: <%= @booking.end_date %></h5>
+<%= link_to 'See all Bookings', life_bookings_path(@booking.life), class: "btn btn-success" %>
+<%= link_to 'Delete this Booking', booking_path(@booking.id), data: { "turbo-method": :delete }, class: "btn btn-warning" %>

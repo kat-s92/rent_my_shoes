@@ -8,8 +8,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.life = @life
+    @booking.user = current_user
     if @booking.save
-      redirect_to life_bookings_path(@booking)
+      redirect_to life_booking_path(@life, @booking)
     else
       render 'bookings/new', status: :unprocessable_entity
     end
@@ -26,7 +27,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path, status: :see_other
+    redirect_to life_bookings_path(@booking.life_id), status: :see_other
   end
 
   private
@@ -36,6 +37,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:life_id)
+    params.require(:booking).permit(:life_id, :start_date, :end_date)
   end
 end
