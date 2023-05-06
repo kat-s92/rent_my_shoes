@@ -14,8 +14,12 @@ class LivesController < ApplicationController
 
   def create
     @life = Life.new(life_params)
-    @life.save
-    # redirect_to new_life_path(@life)
+    @life.user = current_user
+    if @life.save
+      redirect_to life_path(@life)
+    else
+      render 'lives/new', status: :unprocessable_entity
+    end
   end
 
   def destroy

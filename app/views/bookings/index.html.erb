@@ -1,5 +1,5 @@
 <h1> My bookings 🥾 </h1>
   <% @bookings.each do |booking| %>
-    <%= link_to  booking.life.name , booking_path(booking.id)  %>
-    <%= link_to '🗑️', booking_path(booking.id) ,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%= link_to  booking.life.name , life_booking_path(booking.life, booking.id)  %>
+    <%= link_to '🗑️', booking_path(booking.id), data: { "turbo-method": :delete } %>
   <% end %>
