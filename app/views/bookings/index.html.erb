@@ -1,5 +1,12 @@
-<h1> My bookings 🥾 </h1>
-  <% @bookings.each do |booking| %>
+<h1>Welcome to your bookings Dashboard 🥾 </h1>
+<h2>Your Upcoming Bookings</h2>
+  <% @my_bookings.each do |booking| %>
     <%= link_to  booking.life.name , life_booking_path(booking.life, booking.id)  %>
     <%= link_to '🗑️', booking_path(booking.id), data: { "turbo-method": :delete } %>
+  <br/>
   <% end %>
+  <h3>Your Live's Bookings</h3>
+<% @my_rentals.each do |life| %>
+<%= User.find_by(id:life.user_id).name %>
+<% end %>
+<%# where life_id = current.user %>
