@@ -12,8 +12,8 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
     container: this.element, // container ID
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    // center: [-74.5, 40], // starting position [lng, lat]
-    // zoom: 9, // starting zoom
+    center: [13.378690871250333, 52.51635135], // starting position [lng, lat]
+    zoom: 9, // starting zoom
     });
     // Create a new marker, set the longitude and latitude, and add it to the map.
     this.#AddMarkersToMap()
@@ -21,8 +21,10 @@ export default class extends Controller {
 
   #AddMarkersToMap(){
     this.markersValue.forEach((marker) => {
-    new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
       .addTo(this.map);
     })
   }

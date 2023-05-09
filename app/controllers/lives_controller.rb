@@ -5,7 +5,8 @@ class LivesController < ApplicationController
     @markers = @lives.geocoded.map do |life|
       {
         lat: life.latitude,
-        lng: life.longitude
+        lng: life.longitude,
+        info_window: render_to_string(partial: "popup", locals: { life:life})
       }
     end
   end
