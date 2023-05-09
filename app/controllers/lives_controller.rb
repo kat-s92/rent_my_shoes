@@ -13,6 +13,7 @@ class LivesController < ApplicationController
 
   def show
     @life = Life.find(params[:id])
+    @reviews = Reviews.where(life_id: @life.id)
   end
 
   def new

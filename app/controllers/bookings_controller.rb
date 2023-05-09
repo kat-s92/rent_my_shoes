@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_life, only: %i[create new]
+  before_action :set_life, only: %i[create new show]
 
   def new
     @booking = Booking.new
@@ -22,6 +22,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @review = Review.new
+    @given_reviews = Review.where()
   end
 
   def destroy
