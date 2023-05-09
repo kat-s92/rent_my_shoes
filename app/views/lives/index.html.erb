@@ -1,8 +1,18 @@
 <div>
   <h1> Rent my Shoes 🥾 </h1>
+  <h2>- Walk a mile in my Shoes</h2>
+  <h2>Rent a day in the life of...</h2>
+<div data-controller="map"
+  data-map-markers-value="<%=@markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  id="map"
+  style="width: 100%; height: 300px; margin: 32px;">
+  </div>
+
   <%= link_to "Upload a life", new_life_path, class: "btn btn-primary" %>
-</div>
+<br/>
   <% @lives.each do |life| %>
     <%= link_to life.name, life_path(life.id)  %><br>
     <%= life.details %><br><br>
   <% end %>
+</div>

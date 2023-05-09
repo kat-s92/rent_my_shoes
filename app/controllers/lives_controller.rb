@@ -2,6 +2,13 @@ class LivesController < ApplicationController
   def index
     @lives = Life.all
     # raise
+    @markers = @lives.geocoded.map do |life|
+      {
+        lat: life.latitude,
+        lng: life.longitude,
+        info_window: render_to_string(partial: "popup", locals: { life:life})
+      }
+    end
   end
 
   def show
