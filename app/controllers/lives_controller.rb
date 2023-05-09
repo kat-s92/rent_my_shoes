@@ -2,6 +2,12 @@ class LivesController < ApplicationController
   def index
     @lives = Life.all
     # raise
+    @markers = @lives.geocoded.map do |life|
+      {
+        lat: life.latitude,
+        lng: life.longitude
+      }
+    end
   end
 
   def show
