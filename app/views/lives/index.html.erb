@@ -11,8 +11,9 @@
 
   <%= link_to "Upload a life", new_life_path, class: "btn btn-primary" %>
 <br/>
+  <div class="grid">
   <% @lives.each do |life| %>
-    <%= link_to life.name, life_path(life.id)  %><br>
-    <%= life.details %><br><br>
+  <%= render "livescard", life:life %>
   <% end %>
+  </div>
 </div>
