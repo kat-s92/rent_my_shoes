@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root 'lives#index'
 
   resources :lives do
-    resources :bookings, only: %i[create new index show]
+    resources :bookings, only: %i[create new show] do
+      resources :reviews
+    end
   end
-  resources :bookings, only: :destroy
+  resources :bookings, only: %i[destroy index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"
