@@ -10,8 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/bookings";
 
 a {
   text-decoration: none;
   color: $blue;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding:0;
 }

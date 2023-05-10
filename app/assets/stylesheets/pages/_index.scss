@@ -13,6 +13,25 @@ flex-direction: column;}
   padding:0 32px 32px 32px;
 }
 
-.main-header {
-  font-size: 42px;
+.intro{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  text-align: center;
+  padding-top: 24px;
+  p {
+    letter-spacing: 1.5px;
+  }
+  h2 {
+    letter-spacing: -3px;
+  }
 }
+
+h2, h3{
+  font-family: 'Konkhmer Sleokchher';
+  }
+
+  h2 {
+
+    font-size: $h2;
+  }
