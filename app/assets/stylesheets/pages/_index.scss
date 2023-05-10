@@ -1,10 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.page-container{
+.page-container {
   display: flex;
   align-items: center;
-flex-direction: column;}
+flex-direction: column;
+}
 
 .grid{
   display: grid;
