@@ -1,12 +1,32 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding: 16px 32px 16px 32px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+#navbarDropdown{
+  padding-left: 24px;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  padding-left: 16px;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  p{
+    margin:0;
+    align-self: center;
+    color: #06D6A0;
+    font-weight:bold;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+  }
 }

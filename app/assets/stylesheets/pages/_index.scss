@@ -5,3 +5,14 @@
   display: flex;
   align-items: center;
 flex-direction: column;}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+  padding:0 32px 32px 32px;
+}
+
+.main-header {
+  font-size: 42px;
+}

@@ -1,4 +1,4 @@
-<h1>Welcome to your bookings Dashboard 🥾 </h1>
+<h3>Your Dashboard,  <%= current_user.name.capitalize %> </h3>
 <h2>Your Upcoming Bookings</h2>
   <% @my_bookings.each do |booking| %>
     <%= link_to  booking.life.name , life_booking_path(booking.life, booking.id)  %>
