@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.page-container{
+  display: flex;
+  align-items: center;
+flex-direction: column;}
