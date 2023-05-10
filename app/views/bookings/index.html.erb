@@ -1,5 +1,15 @@
-<h1> My bookings 🥾 </h1>
-  <% @bookings.each do |booking| %>
+<div class="page-container-bookings">
+<h2>Bookings</h2>
+<p>Welcome back,  <%= current_user.name.capitalize %> 👋🏻</p>
+<h3>Your Upcoming Bookings</h3>
+  <% @my_bookings.each do |booking| %>
     <%= link_to  booking.life.name , life_booking_path(booking.life, booking.id)  %>
     <%= link_to '🗑️', booking_path(booking.id), data: { "turbo-method": :delete } %>
+  <br/>
   <% end %>
+  <h3>Your Live's Bookings</h3>
+<% @my_rentals.each do |life| %>
+<%= render "bookingcard", life:life %>
+<% end %>
+</div>
+<%# where life_id = current.user %>

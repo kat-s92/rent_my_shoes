@@ -1,8 +1,19 @@
 class BookingsController < ApplicationController
   before_action :set_life, only: %i[create new show]
 
+  def index
+    @bookings = Booking.all
+    @my_bookings = Booking.where(user_id: current_user.id)
+    @my_rentals = Booking.where(life_id: current_user.id)
+  end
+
   def new
     @booking = Booking.new
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    @review = Review.new
   end
 
   def create
@@ -14,15 +25,6 @@ class BookingsController < ApplicationController
     else
       render 'bookings/new', status: :unprocessable_entity
     end
-  end
-
-  def index
-    @bookings = Booking.all
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-    @review = Review.new
   end
 
   def destroy

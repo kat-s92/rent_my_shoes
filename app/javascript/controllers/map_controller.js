@@ -13,7 +13,7 @@ export default class extends Controller {
     container: this.element, // container ID
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
     center: [13.378690871250333, 52.51635135], // starting position [lng, lat]
-    zoom: 9, // starting zoom
+    zoom: 5, // starting zoom
     });
     // Create a new marker, set the longitude and latitude, and add it to the map.
     this.#AddMarkersToMap()
