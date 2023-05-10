@@ -6,6 +6,11 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  gap: 12px
+}
+
+.navbar-nav {
+  gap: 12px;
 }
 
 #navbarDropdown{
