@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_life, only: %i[create new]
+  before_action :set_life, only: %i[create new show]
 
   def index
     @bookings = Booking.all
@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @review = Review.new
   end
 
   def create
@@ -29,7 +30,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to life_bookings_path(@booking.life_id), status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private

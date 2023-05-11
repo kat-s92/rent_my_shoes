@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :lives do
     resources :bookings, only: %i[create new show] do
-      resources :reviews
+      resources :reviews, only: %i[create new index]
     end
   end
   resources :bookings, only: %i[destroy index]

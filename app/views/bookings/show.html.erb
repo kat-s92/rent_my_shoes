@@ -3,3 +3,12 @@
 <h5>Booking End Date: <%= @booking.end_date %></h5>
 <%= link_to 'See all Bookings', bookings_path, class: "btn btn-success" %>
 <%= link_to 'Delete this Booking', booking_path(@booking.id), data: { "turbo-method": :delete }, class: "btn btn-warning" %>
+
+
+
+<h1>How was your life experience? 💌</h1>
+<%= simple_form_for [@life, @booking, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :comment %>
+  <%= f.submit "Submit your review" %>
+<% end %>
