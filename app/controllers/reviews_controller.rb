@@ -1,3 +1,4 @@
+require 'date'
 class ReviewsController < ApplicationController
   # def index
   #   @reviews = Review.all
@@ -16,11 +17,9 @@ class ReviewsController < ApplicationController
     @review.life = Life.find(params[:life_id])
     @review.booking = Booking.find(params[:booking_id])
     @review.user = current_user
-    @review.save
-    redirect_to life_path(params[:life_id])
-    # else
-    #   render 'new_life_booking_review_path', status: :unprocessable_entity
-    # end
+      @review.save
+      # Date.today > @booking[:end_date]
+      # render 'new_life_booking_review_path', status: :unprocessable_entity
   end
 
   private

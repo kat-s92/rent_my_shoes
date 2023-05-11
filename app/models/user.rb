@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :lives
   has_many :bookings
   has_many :reviews
-
+  has_one_attached :photo
   # validates :name, presence: true
   # user can give meny reviews
 end

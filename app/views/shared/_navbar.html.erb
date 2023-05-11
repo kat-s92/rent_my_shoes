@@ -17,7 +17,7 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "Upload a life", new_life_path, class: "nav-link", class: "btn btn-primary", style:"color:white"%>
+            <%= link_to "Upload Your life", new_life_path, class: "nav-link", class: "btn btn-primary", style:"color:white"%>
           </li>
           <li class="nav-item">
             <%= link_to "Bookings", bookings_path, class: "nav-link", class: "btn btn-secondary" , style:"color:white"%>
@@ -32,7 +32,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link", class: "btn btn-primary"%>
+            <%= link_to "Login", new_user_session_path, class: "nav-link", class: "btn btn-primary", style:"color:white"%>
           </li>
         <% end %>
       </ul>

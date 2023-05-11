@@ -1,6 +1,9 @@
 class LivesController < ApplicationController
+  # before_action :set_review, only: %i[show]
+
   def index
     @lives = Life.all
+    # @reviews = Review.where()
     # raise
     @markers = @lives.geocoded.map do |life|
       {
@@ -36,9 +39,13 @@ class LivesController < ApplicationController
     redirect_to lives_path, status: :see_other
   end
 
+  # raise
   private
-
   def life_params
     params.require(:life).permit(:name, :details, :user_id)
   end
+
+  # def set_review
+  #   @review = Review.find(params[:life_id])
+  # end
 end
