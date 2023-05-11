@@ -4,7 +4,7 @@
 <%= link_to 'See all Bookings', bookings_path, class: "btn btn-success" %>
 <%= link_to 'Delete this Booking', booking_path(@booking.id), data: { "turbo-method": :delete }, class: "btn btn-warning" %>
 
-
+<%# render the below review only if current date is past the bookng end date %>
 
 <h1>How was your life experience? 💌</h1>
 <%= simple_form_for [@life, @booking, @review] do |f| %>

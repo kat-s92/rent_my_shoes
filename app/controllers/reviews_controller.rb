@@ -13,13 +13,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    # if Date.today > @booking[:end_date]
     @review = Review.new(review_params)
     @review.life = Life.find(params[:life_id])
     @review.booking = Booking.find(params[:booking_id])
     @review.user = current_user
-      @review.save
-      # Date.today > @booking[:end_date]
-      # render 'new_life_booking_review_path', status: :unprocessable_entity
+    @review.save
+    # render 'new_life_booking_review_path', status: :unprocessable_entity
   end
 
   private
