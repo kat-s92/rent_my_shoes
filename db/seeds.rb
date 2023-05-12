@@ -103,34 +103,34 @@ user_hasan_minhaj.save
 
 puts "Creating Lives 🗂️"
 
-array_of_links = ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"]
-array_of_addresses = ["Stationsplein, 1012 Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
-  "Pariser Platz, 10117 Berlin, Germany", "Normannenstraße 20, 10365 Berlin",
-  "Friedrichstraße 43, 10117 Berlin, Germany"]
+# array_of_links = ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"]
+# array_of_addresses = []
 
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
 
 
-for i in 0...array_of_links.length
+# for i in 0...array_of_links.length
 
-  life = Life.new(
-    address: array_of_addresses[i],
-    name:
-  )
+#   life = Life.new(
+#     address: array_of_addresses[i],
+#     name:
+#   )
 
-  life.photo.attach(io: array_of_links[i], filename: "nes.png", content_type: "image/png")
-  life.save
-end
+#   life.photo.attach(io: array_of_links[i], filename: "nes.png", content_type: "image/png")
+#   life.save
+# end
 
 
 life_jesus = Life.new do |life|
-  life.address = [,
+  life.address = ["Stationsplein, 1012 Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+                  "Pariser Platz, 10117 Berlin, Germany", "Normannenstraße 20, 10365 Berlin",
+                  "Friedrichstraße 43, 10117 Berlin, Germany",
                   "Rudi-Dutschke-Straße 26, 10969 Berlin",
                   "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris",
                   "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, Dublin 1, D01 F5P2, Ireland"].sample
   life.name = "Jesus"
   life.details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non efficitur dui."
-life.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# life.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 end
 life_jesus.user = user_jesus
 life_jesus.save
