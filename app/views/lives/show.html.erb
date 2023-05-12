@@ -1,10 +1,14 @@
 <h1>Life of <%= @life.name %></h1>
  <p><%= @life.details %></p>
-
+      <% if @life.photo.attached? %>
+     <%= image_tag @life.photo, height:200, width:80, crop: :fill %>
+     <% else %>
+     <p>🚨 There is no image attached</p>
+     <% end %>
 <h4>See what other customers think 🥾</h4>
 <% @reviews.each do |review| %>
   <%= review.rating %><br>
   <%= review.comment %><br><br>
-<% end %>
+  <% end %>
 <%= link_to 'Book this life',  new_life_booking_path(@life.id), class: 'btn btn-warning'%>
 <%= link_to 'See all lives',  lives_path, class: 'btn btn-success'%>
