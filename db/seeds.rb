@@ -136,7 +136,8 @@ life_jesus.user = user_jesus
 life_jesus.save
 
 life_harry_potter = Life.new do |life|
-  life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy", "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
+  life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+    "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
   life.name = "Harry Potter"
   life.details = "I am an orphan living with my abusive aunt and uncle. Last year, I discovered I am a wizard and now I study at Hogwarts School of Witchcraft and Wizardry. Come do magic like me!"
 end

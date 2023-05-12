@@ -1,10 +1,13 @@
 <div class="lifecard mb-1 my-3">
-<h2 class="page-main-header"></h2>
-<%= link_to life.name, life_path(life.id)  %><br>
+<div>
+<h3 class="page-secondary-header"><%= link_to life.name, life_path(life.id)  %></h3>
     <%= life.details %>
+    </div>
+    <div>
      <% if life.photo.attached? %>
-    <%= cl_image_tag life.photo.key, height:200, width:80, crop: :fill %>
+    <%= cl_image_tag life.photo.key, class:"life-img"%>
   <% else %>
      <p>🚨 There is no image attached</p>
     <% end %>
+    </div>
 </div>
