@@ -1,4 +1,4 @@
-<h1>Life of <%= @life.name %></h1>
+<h2 class="page-main-header">Life of <%= @life.name %></h2>
  <p><%= @life.details %></p>
       <% if @life.photo.attached? %>
      <%= image_tag @life.photo, height:200, width:80, crop: :fill %>

@@ -1,0 +1,15 @@
+
+<div class="life-booking-card">
+  <div>
+      <p class="date-box">📆 From <%= booking.start_date %> Until <%= booking.end_date %> </p>
+    <h2 class="booking-name"><%= link_to  booking.life.name , life_booking_path(booking.life, booking.id)  %></h2>
+      </div>
+    <div>
+    <% if Date.today > booking.end_date %>
+      <%= link_to 'Review Booking', life_booking_path(booking.life, booking.id), class: 'btn btn-primary' %>
+      <%= link_to 'Delete Booking', booking_path(booking.id), data: { "turbo-method": :delete }, class: 'btn btn-warning' %>
+      <% else %>
+        <%= link_to 'Delete Booking', booking_path(booking.id), data: { "turbo-method": :delete }, class: 'btn btn-warning' %>
+      <% end %>
+    </div>
+</div>
