@@ -13,6 +13,10 @@ Life.destroy_all
 User.destroy_all
 Booking.destroy_all
 
+Category.create(name: "Science")
+Category.create(name: "Religion")
+Category.create(name: "Actor")
+
 puts "Creating Database 🗂️"
 
 puts "Creating Users 🗂️"
