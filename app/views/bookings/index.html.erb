@@ -1,15 +1,33 @@
 <div class="page-container-bookings">
-<h2>Bookings</h2>
-<p>Welcome back,  <%= current_user.name.capitalize %> 👋🏻</p>
-<h3>Your Upcoming Bookings</h3>
-  <% @my_bookings.each do |booking| %>
-    <%= link_to  booking.life.name , life_booking_path(booking.life, booking.id)  %>
-    <%= link_to '🗑️', booking_path(booking.id), data: { "turbo-method": :delete } %>
-  <br/>
-  <% end %>
-  <h3>Your Live's Bookings</h3>
-<% @my_rentals.each do |life| %>
-<%= render "bookingcard", life:life %>
-<% end %>
+  <h2 class="page-main-header">Bookings</h2>
+    <p>Welcome back,  <%= current_user.name.titleize %> 👋🏻</p>
+    <div class="bookings">
+    <div>
+      <h3 class="page-tertiary-header">Upcoming Bookings</h3>
+        <% @my_bookings.each do |booking| %>
+        <% if Date.today < booking.end_date %>
+          <%= render 'life_booking_card', booking:booking %>
+          <% end %>
+      <% end %>
+  </div>
+<div>
+   <h3 class="page-tertiary-header">Past Bookings</h3>
+    <% @my_bookings.each do |booking| %>
+      <% if Date.today > booking.end_date %>
+        <%= render 'life_booking_card', booking:booking %>
+        <% end %>
+    <% end %>
+  </div>
+  <div>
+    <h3 class="page-tertiary-header">See who has booked your life</h3>
+    <% if @my_rentals.empty? %>
+    <p>Nobody has booked your life yet</p>
+    <% else %>
+      <% @my_rentals.each do |life| %>
+      <%= render "bookingcard", life:life %>
+      <% end %>
+    <% end %>
+</div>
+</div>
 </div>
 <%# where life_id = current.user %>

@@ -1,5 +1,5 @@
-<div class="container">
-<h1>Your are Booking <%= @life.name %></h1>
+<div class="form">
+<h2 class="page-main-header">Your are Booking <%= @life.name %></h2>
 <%= simple_form_for [@life, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
