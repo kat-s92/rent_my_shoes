@@ -3,22 +3,23 @@
   border-radius: 12px;
   padding: 16px;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   box-shadow: 0 3px 6px rgba(65, 65, 65, 0.16), 0 3px 6px rgba($color: #d7cfcf, $alpha: 1.0);
   a {
     color: $black;
   }
   gap:8px;
-
   img{
     height: 50px;
     width: 50px;
   };
 }
 
-.life-img {
+#life-img {
+  align-self: flex-end;
   width:100%;
-  height:210px;
+  height:220px;
   object-fit: cover;
 }
 
