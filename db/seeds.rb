@@ -103,7 +103,7 @@ user_hasan_minhaj.save
 
 puts "Creating Lives 🗂️"
 
-# array_of_links = ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"]
+# array_of_photos = ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"]
 # array_of_addresses = []
 
 # file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
@@ -130,7 +130,7 @@ life_jesus = Life.new do |life|
                   "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, Dublin 1, D01 F5P2, Ireland"].sample
   life.name = "Jesus"
   life.details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non efficitur dui."
-# life.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+life.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 end
 life_jesus.user = user_jesus
 life_jesus.save
