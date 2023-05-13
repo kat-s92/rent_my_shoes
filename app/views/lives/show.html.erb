@@ -1,21 +1,25 @@
+
 <h2 class="page-main-header">Life of <%= @life.name %></h2>
- <p><%= @life.details %></p>
   <% if @life.photo.attached? %>
-    <%= image_tag @life.photo, height:200, width:80, crop: :fill %>
+    <%= image_tag @life.photo, class: 'life-show-img'%>
   <% else %>
     <p>🚨 There is no image attached</p>
   <% end %>
 
+<p><%= @life.details %></p>
 <%= link_to 'Book this life',  new_life_booking_path(@life.id), class: 'btn btn-primary'%>
 <%= link_to 'See all lives',  lives_path, class: 'btn btn-secondary'%>
 
-<h3 class = 'page-tertiary-header'>See what others think </h3>
-<div class = 'review-card'>
-    <% @reviews.each do |review| %>
-      <div class = 'review-giver'><i class="fa-solid fa-user" style="color: #1b9aaa;"></i> <%= current_user.name%>:</div>
-      <% review.rating.to_i.times do |star| %>
-          <i class="fa-solid fa-star" style="color: #fed401;"></i>
+<% if @reviews.empty? %>
+<% else %>
+  <h3 class = 'page-tertiary-header'>See what others think </h3>
+  <div class = 'review-card'>
+      <% @reviews.each do |review| %>
+        <div class = 'review-giver'><i class="fa-solid fa-user" style="color: #1b9aaa;"></i> <%= current_user.name%>:</div>
+        <% review.rating.to_i.times do |star| %>
+            <i class="fa-solid fa-star" style="color: #fed401;"></i>
+        <% end %>
+        <%= review.comment %><br><br>
       <% end %>
-      <%= review.comment %><br><br>
-    <% end %>
+  <% end %>
 </div>
