@@ -9,4 +9,21 @@ class Life < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_one_attached :photo
+
+  def create_icon(category)
+    case category
+    when "Science"
+      return "science.png"
+
+    when "Religion"
+      return "religion.png"
+
+    when "Actor"
+      return "actor.png"
+
+    else
+
+    end
+
+  end
 end
