@@ -2,7 +2,9 @@
   <h1>Upload Your Life</h1>
   <%= simple_form_for @life do |f| %>
     <%= f.input :name %>
+    <%= f.input :address %>
     <%= f.input :details %>
+    <%= f.association :category, prompt: "Selected Category" %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Submit", class: "btn btn-primary", style:"color:white"%>
   <% end %>

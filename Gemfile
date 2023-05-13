@@ -1,3 +1,4 @@
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -7,8 +8,6 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 gem "devise"
-
-
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -38,8 +37,6 @@ gem "geocoder"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
-gem "dotenv-rails", groups: [:development, :test]
-
 gem "cloudinary"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -64,7 +61,6 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "dotenv-rails"
-
 end
 
 group :development do
@@ -83,4 +79,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "pry-byebug"
 end

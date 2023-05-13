@@ -6,13 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
-
+require "pry-byebug"
 
 puts "Cleaning Database 🧹"
-Life.destroy_all
+# Life.destroy_all
 User.destroy_all
 Booking.destroy_all
 Review.destroy_all
+
+
+
+Category.create(name: "Science")
+Category.create(name: "Religion")
+Category.create(name: "Actor")
 
 puts "Creating Database 🗂️"
 
@@ -145,6 +151,29 @@ user_hasan_minhaj.save
 # life_harry_potter.user = user_harry_potter
 # life_harry_potter.save
 
+# life_jesus = Life.new do |life|
+#   life.address = ["Stationsplein, 1012 Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+#                   "Pariser Platz, 10117 Berlin, Germany", "Normannenstraße 20, 10365 Berlin",
+#                   "Friedrichstraße 43, 10117 Berlin, Germany",
+#                   "Rudi-Dutschke-Straße 26, 10969 Berlin",
+#                   "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris",
+#                   "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, Dublin 1, D01 F5P2, Ireland"].sample
+#   life.name = "Jesus"
+#   life.details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non efficitur dui."
+# # life.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# end
+# life_jesus.user = user_jesus
+# life_jesus.save
+
+# life_harry_potter = Life.new do |life|
+#   life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+#     "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
+#   life.name = "Harry Potter"
+#   life.details = "I am an orphan living with my abusive aunt and uncle. Last year, I discovered I am a wizard and now I study at Hogwarts School of Witchcraft and Wizardry. Come do magic like me!"
+# end
+# life_harry_potter.user = user_harry_potter
+# life_harry_potter.save
+
 # life_elon_musk = Life.new do |life|
 #   life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy", "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
 #   life.name = "Elon Musk"
@@ -208,21 +237,5 @@ user_hasan_minhaj.save
 # end
 # life_agatha_christie.user = user_agatha_christie
 # life_agatha_christie.save
-
-# life_jamie_oliver = Life.new do |life|
-#   life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy", "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
-#   life.name = "Jamie Oliver"
-#   life.details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non efficitur dui."
-# end
-# life_jamie_oliver.user = user_jamie_oliver
-# life_jamie_oliver.save
-
-# life_hasan_minhaj = Life.new do |life|
-#   life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy", "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
-#   life.name = "Hasan Minhaj"
-#   life.details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non efficitur dui."
-# end
-# life_hasan_minhaj.user = user_hasan_minhaj
-# life_hasan_minhaj.save
 
 # puts "We have a DB ✅ with #{Life.count} lives"
