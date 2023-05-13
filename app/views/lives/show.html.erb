@@ -6,11 +6,16 @@
     <p>🚨 There is no image attached</p>
   <% end %>
 
-<h4>See what others think </h4>
-  <% @reviews.each do |review| %>
-    <%= review.rating %><br>
-    <%= review.comment %><br><br>
-  <% end %>
-
 <%= link_to 'Book this life',  new_life_booking_path(@life.id), class: 'btn btn-primary'%>
 <%= link_to 'See all lives',  lives_path, class: 'btn btn-secondary'%>
+
+<h3 class = 'page-tertiary-header'>See what others think </h3>
+<div class = 'review-card'>
+    <% @reviews.each do |review| %>
+      <div class = 'review-giver'><i class="fa-solid fa-user" style="color: #1b9aaa;"></i> <%= current_user.name%>:</div>
+      <% review.rating.to_i.times do |star| %>
+          <i class="fa-solid fa-star" style="color: #fed401;"></i>
+      <% end %>
+      <%= review.comment %><br><br>
+    <% end %>
+</div>
