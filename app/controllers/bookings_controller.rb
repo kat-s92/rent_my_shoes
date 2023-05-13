@@ -3,8 +3,9 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @my_bookings = Booking.where(user_id: current_user.id)
-    @my_rentals = Booking.where(life_id: current_user.id)
+    @my_bookings = current_user.bookings
+    # @my_rentals = Booking.where(life: current_user)
+    @my_rentals = current_user.lives.first.bookings
   end
 
   def new
