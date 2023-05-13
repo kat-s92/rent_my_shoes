@@ -9,7 +9,7 @@ require "open-uri"
 require "pry-byebug"
 
 puts "Cleaning Database 🧹"
-Life.destroy_all
+# Life.destroy_all
 User.destroy_all
 Booking.destroy_all
 
