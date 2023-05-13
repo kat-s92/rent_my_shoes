@@ -1,19 +1,21 @@
 <div class="lifecard mb-1 my-3">
-<div>
-<h3 class="page-secondary-header"><%= link_to life.name, life_path(life.id)  %></h3>
+  <div>
+    <h3 class="page-secondary-header"><%= link_to life.name, life_path(life.id)  %></h3>
     <%= life.details %>
+  </div>
+  <div>
     <% @reviews = Review.where(life_id: life.id) %>
     <% ratings = [] %>
     <% @reviews.each do |review| %>
       <% ratings << review.rating.to_i %>
     <% end %>
-     <%= ratings.sum.fdiv(ratings.size) %>
-    </div>
-    <div>
-     <% if life.photo.attached? %>
+    <%= ratings.sum.fdiv(ratings.size) %>
+  </div>
+  <div>
+    <% if life.photo.attached? %>
     <%= cl_image_tag life.photo.key, class:"life-img"%>
-  <% else %>
-     <p>🚨 There is no image attached</p>
+    <% else %>
+      <p>🚨 There is no image attached</p>
     <% end %>
-    </div>
+  </div>
 </div>
