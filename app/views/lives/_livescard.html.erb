@@ -9,8 +9,20 @@
     <% @reviews.each do |review| %>
       <% ratings << review.rating.to_i %>
     <% end %>
-    <%= ratings.sum.fdiv(ratings.size) %>
+
+    <% if ratings.empty? %>
+      <% avg_rating = 0 %>
+      <% 5.times do |star| %>
+        <i class="fa-solid fa-star" style="color: #d7d5d5;"></i>
+      <% end %>
+    <% else %>
+      <% avg_rating = ratings.sum.fdiv(ratings.size).to_i%>
+      <% avg_rating.times do |star| %>
+        <i class="fa-solid fa-star" style="color: #fed401;"></i>
+      <% end %>
+    <% end %>
   </div>
+
   <div>
     <% if life.photo.attached? %>
     <%= cl_image_tag life.photo.key, class:"life-img"%>

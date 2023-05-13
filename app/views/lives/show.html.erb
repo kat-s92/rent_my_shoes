@@ -1,19 +1,16 @@
 <h2 class="page-main-header">Life of <%= @life.name %></h2>
  <p><%= @life.details %></p>
-      <% if @life.photo.attached? %>
-     <%= image_tag @life.photo, height:200, width:80, crop: :fill %>
-     <% else %>
-     <p>🚨 There is no image attached</p>
-     <% end %>
-<h4>See what others think </h4>
-     <% if @review.blank? %>
-       <p><%= @life.name.capitalize %> does not have reviews yet</p>
+  <% if @life.photo.attached? %>
+    <%= image_tag @life.photo, height:200, width:80, crop: :fill %>
   <% else %>
-<% @reviews.each do |review| %>
-  <%= review.rating %><br>
-  <%= review.comment %><br><br>
+    <p>🚨 There is no image attached</p>
   <% end %>
 
+<h4>See what others think </h4>
+  <% @reviews.each do |review| %>
+    <%= review.rating %><br>
+    <%= review.comment %><br><br>
   <% end %>
+
 <%= link_to 'Book this life',  new_life_booking_path(@life.id), class: 'btn btn-primary'%>
 <%= link_to 'See all lives',  lives_path, class: 'btn btn-secondary'%>
