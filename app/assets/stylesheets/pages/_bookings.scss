@@ -1,9 +1,11 @@
-// .page-container {
-//   align-items: flex-start;
-// }
-h2 {
-  // padding-top:32px;
+.page-container-bookings {
+  h2 {
+    margin-bottom: 24px;
+  }
 }
-p{
-  // font-size: 32px;
+
+.bookings {
+display: flex;
+flex-direction: column;
+gap:24px;
 }

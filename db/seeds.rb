@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
 
 puts "Cleaning Database 🧹"
 Life.destroy_all
@@ -101,6 +103,24 @@ user_hasan_minhaj.save
 
 puts "Creating Lives 🗂️"
 
+# array_of_links = ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"]
+# array_of_addresses = []
+
+# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+
+
+# for i in 0...array_of_links.length
+
+#   life = Life.new(
+#     address: array_of_addresses[i],
+#     name:
+#   )
+
+#   life.photo.attach(io: array_of_links[i], filename: "nes.png", content_type: "image/png")
+#   life.save
+# end
+
+
 life_jesus = Life.new do |life|
   life.address = ["Stationsplein, 1012 Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
                   "Pariser Platz, 10117 Berlin, Germany", "Normannenstraße 20, 10365 Berlin",
@@ -110,12 +130,14 @@ life_jesus = Life.new do |life|
                   "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, Dublin 1, D01 F5P2, Ireland"].sample
   life.name = "Jesus"
   life.details = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non efficitur dui."
+# life.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 end
 life_jesus.user = user_jesus
 life_jesus.save
 
 life_harry_potter = Life.new do |life|
-  life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy", "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
+  life.address = ["Stationsplein, 1012 AB Amsterdam, Netherlands", "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+    "Pariser Platz, 10117 Berlin", "Normannenstraße 20, 10365 Berlin", "Friedrichstraße 43, 10117 Berlin", "Rudi-Dutschke-Straße 26, 10969 Berlin", "Pl. Charles de Gaulle, 75008 Paris", "Champ de Mars, 5 Av. Anatole France, 75007 Paris", "London SW1A 0AA, United Kingdom", "O'Connell Street Lower, North City, Dublin 1, D01 F5P2, Ireland" ].sample
   life.name = "Harry Potter"
   life.details = "I am an orphan living with my abusive aunt and uncle. Last year, I discovered I am a wizard and now I study at Hogwarts School of Witchcraft and Wizardry. Come do magic like me!"
 end

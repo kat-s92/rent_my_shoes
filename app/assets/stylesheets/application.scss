@@ -13,15 +13,42 @@
 @import "pages/bookings";
 @import "pages/form";
 @import "components/bookingcard";
+@import "components/lifebookingcard";
 
 
 a {
   text-decoration: none;
-  color: $blue;
+  // color: $blue;
 }
 
 body{
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding:0;
+  color: $black;
+}
+
+.btn{
+  color:white;
+}
+
+.btn:hover{
+  color:white;
+}
+
+.page-main-header {
+  font-size: $h2;
+  font-family: $headers-font;
+  margin-top:24px;
+}
+
+.page-secondary-header {
+  font-size: $h3;
+  font-family: $headers-font;
+}
+
+.page-tertiary-header{
+  font-size: $h3;
+  font-family:$body-font;
+  font-weight: 600;
 }
