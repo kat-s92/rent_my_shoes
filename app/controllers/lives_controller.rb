@@ -3,8 +3,6 @@ class LivesController < ApplicationController
 
   def index
     @lives = Life.all
-    # @reviews = Review.where()
-    # raise
     @markers = @lives.geocoded.map do |life|
       {
         lat: life.latitude,

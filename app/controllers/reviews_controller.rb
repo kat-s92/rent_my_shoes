@@ -19,15 +19,13 @@ class ReviewsController < ApplicationController
     @review.booking = Booking.find(params[:booking_id])
     @review.user = current_user
     @review.save
+    redirect_to life_path(params[:life_id])
     # render 'new_life_booking_review_path', status: :unprocessable_entity
   end
 
   private
 
-  # def set_life_booking
-  #   @life = Life.find(params[:life_id])
-  #   @booking = Booking.find(params[:life_id])
-  # end
+
 
   def review_params
     params.require(:review).permit(:rating, :comment)
