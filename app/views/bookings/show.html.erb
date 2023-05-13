@@ -5,11 +5,12 @@
 <br/>
   <%= link_to 'See all Bookings', bookings_path, class: "btn btn-primary", style:'color:white'%>
   <%= link_to 'Delete this Booking', booking_path(@booking.id), data: { "turbo-method": :delete }, class: "btn btn-warning", style:'color:white' %>
-  <% if Date.today > @booking.end_date %>
-<div class="form">
-<h4>How was your life experience with <%= @life.name %>?</h4>
+
+<% if Date.today > @booking.end_date %>
+  <div class="form">
+  <h4>How was your life experience with <%= @life.name %>?</h4>
   <%= simple_form_for [@life, @booking, @review] do |f| %>
-    <%= f.input :rating %>
+    <%= f.input :rating, collection: (1..5) %>
     <%= f.input :comment %>
     <%= f.submit "Submit your review", class: 'btn btn-secondary', style:'color:white' %>
   <% end %>

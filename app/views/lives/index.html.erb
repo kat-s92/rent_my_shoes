@@ -11,9 +11,18 @@ walk a mile in my shoes" - Joe South</p>
   id="map"
   style="width: 80%; height: 300px; margin: 32px;">
   </div>
+
   <div class="grid">
-  <% @lives.each do |life| %>
-  <%= render "livescard", life:life %>
-  <% end %>
+    <% @lives.each do |life| %>
+    <% if user_signed_in? %>
+      <% if life.user_id == current_user.id %>
+      <%= nil %>
+      <% else %>
+      <%= render "livescard", life:life %>
+      <% end %>
+    <% else %>
+      <%= render "livescard", life:life %>
+    <% end %>
+    <% end %>
   </div>
 </div>

@@ -3,8 +3,6 @@ class LivesController < ApplicationController
 
   def index
     @lives = Life.all
-    # @reviews = Review.where()
-    # raise
     @markers = @lives.geocoded.map do |life|
       {
         lat: life.latitude,
@@ -43,7 +41,7 @@ class LivesController < ApplicationController
   private
 
   def life_params
-    params.require(:life).permit(:name, :details, :photo)
+    params.require(:life).permit(:name, :details, :photo, :category_id)
   end
 
   # def set_review

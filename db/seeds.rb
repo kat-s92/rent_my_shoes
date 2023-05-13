@@ -6,12 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
-
+require "pry-byebug"
 
 puts "Cleaning Database 🧹"
 Life.destroy_all
 User.destroy_all
 Booking.destroy_all
+
+Category.create(name: "Science")
+Category.create(name: "Religion")
+Category.create(name: "Actor")
 
 puts "Creating Database 🗂️"
 
@@ -103,19 +107,12 @@ user_hasan_minhaj.save
 
 puts "Creating Lives 🗂️"
 
-# array_of_links = ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg"]
-# array_of_addresses = []
-
 # file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-
-
 # for i in 0...array_of_links.length
-
 #   life = Life.new(
 #     address: array_of_addresses[i],
 #     name:
 #   )
-
 #   life.photo.attach(io: array_of_links[i], filename: "nes.png", content_type: "image/png")
 #   life.save
 # end

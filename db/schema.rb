@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_11_124707) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_13_103443) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_124707) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lives", force: :cascade do |t|
     t.string "name"
     t.text "details"
@@ -62,6 +68,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_124707) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_lives_on_category_id"
     t.index ["user_id"], name: "index_lives_on_user_id"
   end
 
@@ -95,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_124707) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "lives"
   add_foreign_key "bookings", "users"
+  add_foreign_key "lives", "categories"
   add_foreign_key "lives", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "lives"
