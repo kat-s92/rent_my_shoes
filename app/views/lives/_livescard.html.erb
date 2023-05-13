@@ -1,6 +1,10 @@
 <div class="lifecard mb-1 my-3">
   <div>
-    <h3 class="page-secondary-header"><%= link_to life.name, life_path(life.id)  %></h3>
+  <div class = "headers mb-4">
+  <h3 class="page-secondary-header"><%= link_to life.name, life_path(life.id)  %></h3>
+  <%= image_tag life.create_icon(life.category.name) %>
+  </div>
+
     <%= life.details %>
   </div>
   <div>
