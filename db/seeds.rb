@@ -37,6 +37,8 @@ user_harry_potter = User.new do |u|
   u.password = "123456"
 end
 user_harry_potter.save
+# life_harry_potter.user = user_harry_potter
+
 
 user_elon_musk = User.new do |u|
   u.name = "Elon Musk"
@@ -172,6 +174,7 @@ user_hasan_minhaj.save
 #   life.details = "I am an orphan living with my abusive aunt and uncle. Last year, I discovered I am a wizard and now I study at Hogwarts School of Witchcraft and Wizardry. Come do magic like me!"
 # end
 # life_harry_potter.user = user_harry_potter
+
 # life_harry_potter.save
 
 # life_elon_musk = Life.new do |life|
